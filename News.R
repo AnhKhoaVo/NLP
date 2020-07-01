@@ -13,3 +13,6 @@ News <- merge(Fake, True, all=TRUE)
 News <- News[sample(1:nrow(News)), ]
 
 #Split the data?
+train <- floor(.75 * nrow(News))
+train_y <- train['nature']
+train_x <- train[c('title', 'text', 'subject', 'date')]
